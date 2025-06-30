@@ -277,13 +277,23 @@ public class Weapon : MonoBehaviour
 			Rect bottomRect = new Rect(center.x - (crosshairWidth / 2), center.y + currentCrosshairSize, crosshairWidth, crosshairLength);
 			GUI.DrawTexture(bottomRect, crosshairTexture, ScaleMode.StretchToFill);
 		}
-		if (showCurrentAmmo)
-		{
-			if (type == WeaponType.Raycast || type == WeaponType.Projectile)
-				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Ammo: " + currentAmmo);
-			else if (type == WeaponType.Beam)
-				GUI.Label(new Rect(10, Screen.height - 30, 100, 20), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
-		}
+        if (showCurrentAmmo)
+        {
+            int originalFontSize = GUI.skin.label.fontSize;
+
+            GUI.skin.label.fontSize = 18;
+
+            if (type == WeaponType.Raycast || type == WeaponType.Projectile)
+            {
+                GUI.Label(new Rect(70, Screen.height - 75, 200, 30), "Ammo: " + currentAmmo + " / " + ammoCapacity);
+            }
+            else if (type == WeaponType.Beam)
+            {
+                GUI.Label(new Rect(10, Screen.height - 40, 200, 30), "Heat: " + (int)(beamHeat * 100) + "/" + (int)(maxBeamHeat * 100));
+            }
+
+            GUI.skin.label.fontSize = originalFontSize;
+        }
 	}
 
 	void Fire()
