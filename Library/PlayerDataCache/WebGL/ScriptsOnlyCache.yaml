@@ -18,8 +18,6 @@ ScriptsOnlyBuild:
     - Weapon
     - WeaponSystem
     - ZombieAI
-    Unity.AI.Navigation.Editor.dll:
-    - Unity.AI.Navigation.Editor.NavMeshAssetManager
     Unity.AI.Navigation.dll:
     - Unity.AI.Navigation.NavMeshSurface
     Unity.Rider.Editor.dll:
@@ -36,6 +34,8 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    Unity.Timeline.Editor.dll:
+    - TimelineProjectSettings
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -1687,4 +1687,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Level1.unity
   - Assets/Scenes/GameOver.unity
   - Assets/Scenes/YouWin.unity
-  playerPath: C:/Users/f4549/Music/UAS-VR002-K5
+  playerPath: C:/Users/ASUS/Music/UAS
